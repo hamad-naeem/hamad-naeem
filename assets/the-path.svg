@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 150" fill="none" role="img" aria-label="The path: HTML, CSS, JavaScript, Node.js and Git eaten and still glowing. Pac-Man is chomping SQL now, burning brightest. React, TypeScript and Next.js sit unlit ahead. A ghost named tutorial hell trails behind.">
+<style>
+.jawT{animation:chompT .32s linear infinite alternate;transform-origin:0 0}
+.jawB{animation:chompB .32s linear infinite alternate;transform-origin:0 0}
+@keyframes chompT{from{transform:rotate(0deg)}to{transform:rotate(-26deg)}}
+@keyframes chompB{from{transform:rotate(0deg)}to{transform:rotate(26deg)}}
+.creep{animation:creep 1.4s ease-in-out infinite alternate}
+@keyframes creep{from{transform:translateX(0)}to{transform:translateX(7px)}}
+.bob{animation:bob 1s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(-2px)}to{transform:translateY(2px)}}
+.bite{animation:bite 1.1s ease-in-out infinite}
+@keyframes bite{0%,100%{opacity:1}50%{opacity:.45}}
+.heat{animation:heat 3.2s ease-in-out infinite alternate}
+@keyframes heat{from{opacity:.55}to{opacity:1}}
+</style>
+
+<defs>
+  <filter id="glowS" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2.2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowM" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="3.6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <radialGradient id="emberHeat" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ff7a3d" stop-opacity=".11"/>
+    <stop offset="100%" stop-color="#ff7a3d" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="board"><rect width="880" height="150" rx="18"/></clipPath>
+</defs>
+
+<rect width="880" height="150" rx="18" fill="#151110"/>
+<rect x=".5" y=".5" width="879" height="149" rx="17.5" stroke="#3a2b22"/>
+
+<!-- heat haze around where the action is -->
+<g clip-path="url(#board)">
+  <ellipse class="heat" cx="574" cy="74" rx="240" ry="90" fill="url(#emberHeat)"/>
+</g>
+
+<text x="46" y="34" font-family="Consolas, Menlo, monospace" font-size="11" letter-spacing="4" fill="#8a6a55">THE PATH</text>
+
+<line x1="44" y1="74" x2="836" y2="74" stroke="#241c17" stroke-dasharray="2 7"/>
+<text x="64" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#f0906a">HTML</text>
+<text x="148" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#f0906a">CSS</text>
+<text x="252" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#f0906a">JavaScript</text>
+<text x="362" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#f0906a">Node.js</text>
+<text x="442" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#f0906a">Git</text>
+<circle class="bite" cx="584" cy="74" r="6.5" filter="url(#glowM)" fill="#ffd9c2"/>
+<text class="bite" x="584" y="112" filter="url(#glowS)" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fff4ec">SQL</text>
+<circle cx="678" cy="74" r="5" fill="#3a2f27"/>
+<text x="678" y="112" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d665e">React</text>
+<circle cx="762" cy="74" r="5" fill="#3a2f27"/>
+<text x="762" y="112" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d665e">TypeScript</text>
+<circle cx="836" cy="74" r="5" fill="#3a2f27"/>
+<text x="836" y="112" text-anchor="middle" font-family="Segoe UI, Ubuntu, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d665e">Next.js</text>
+<circle cx="626" cy="74" r="2.4" fill="#2c241d"/>
+<circle cx="652" cy="74" r="2.4" fill="#2c241d"/>
+<circle cx="712" cy="74" r="2.4" fill="#2c241d"/>
+<circle cx="737" cy="74" r="2.4" fill="#2c241d"/>
+<circle cx="794" cy="74" r="2.4" fill="#2c241d"/>
+<circle cx="812" cy="74" r="2.4" fill="#2c241d"/>
+
+<!-- pacman, mid-chomp at the current skill -->
+<g class="creep">
+  <g transform="translate(550 74)" filter="url(#glowM)">
+    <path class="jawT" d="M -15 0 A 15 15 0 0 1 15 0 L 0 0 Z" fill="#ffa06b"/>
+    <path class="jawB" d="M -15 0 A 15 15 0 0 0 15 0 L 0 0 Z" fill="#ffa06b"/>
+    <circle cx="-3.5" cy="-8" r="2.2" fill="#151110"/>
+  </g>
+</g>
+
+<!-- the ghost that never catches him -->
+<g class="bob">
+  <g transform="translate(505 74)" filter="url(#glowS)">
+    <path d="M -12 4 L -12 -4 A 12 12 0 0 1 12 -4 L 12 4 L 8 8.5 L 4 4 L 0 8.5 L -4 4 L -8 8.5 Z" fill="#c15f3c" opacity=".8"/>
+    <circle cx="-4.5" cy="-4" r="3" fill="#f4f3ee"/>
+    <circle cx="4.5" cy="-4" r="3" fill="#f4f3ee"/>
+    <circle cx="-3.4" cy="-4" r="1.5" fill="#151110"/>
+    <circle cx="5.6" cy="-4" r="1.5" fill="#151110"/>
+  </g>
+</g>
+<text x="505" y="112" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="10" letter-spacing="1" fill="#6a5a4d">tutorial hell</text>
+</svg>

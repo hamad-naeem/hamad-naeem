@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 84" fill="none" role="img" aria-label="A crate labeled RSI Screener rolls on pac-dot wheels, brakes just before the PROD line, and holds for final checks. Not deployed yet; getting there.">
+<style>
+.haul{animation:haul 16s infinite}
+@keyframes haul{
+  0%{transform:translateX(-140px);animation-timing-function:linear;opacity:1}
+  58%{transform:translateX(640px);animation-timing-function:cubic-bezier(.33,1,.68,1)}
+  72%{transform:translateX(734px)}
+  94%{transform:translateX(734px);opacity:1}
+  99%{transform:translateX(734px);opacity:0}
+  100%{transform:translateX(-140px);opacity:0}
+}
+.wheel{animation:spin 16s infinite}
+@keyframes spin{
+  0%{transform:rotate(0deg);animation-timing-function:linear}
+  58%{transform:rotate(6875deg);animation-timing-function:cubic-bezier(.33,1,.68,1)}
+  72%{transform:rotate(7704deg)}
+  100%{transform:rotate(7704deg)}
+}
+.jolt{animation:jolt 16s infinite}
+@keyframes jolt{
+  0%,4%,12%,20%,28%,36%,44%,52%,60%{transform:translateY(0)}
+  8%,16%,24%,32%,40%,48%,56%{transform:translateY(-1.2px)}
+  70%{transform:translateY(0)}
+  73%{transform:translateY(1px)}
+  76%,100%{transform:translateY(0)}
+}
+.checks{animation:checks 16s steps(1) infinite;opacity:0}
+@keyframes checks{
+  0%,74%{opacity:0}
+  76%{opacity:1}
+  80%{opacity:0}
+  83%{opacity:1}
+  87%{opacity:0}
+  89%{opacity:1}
+  94%{opacity:0}
+}
+</style>
+
+<defs>
+  <filter id="glowS" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2.2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<!-- ground -->
+<line x1="44" y1="64" x2="836" y2="64" stroke="#241c17" stroke-dasharray="2 7"/>
+
+<!-- PROD finish line: the beacon at the end of the run -->
+<line x1="838" y1="20" x2="838" y2="64" stroke="#5a4436" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="838" y="14" filter="url(#glowS)" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="10" letter-spacing="2" fill="#e0855c">PROD</text>
+
+<!-- blinks while the crate holds at the line -->
+<text class="checks" x="720" y="39" text-anchor="end" font-family="Consolas, Menlo, monospace" font-size="9" letter-spacing="2" fill="#8a6a55">FINAL CHECKS</text>
+
+<g class="haul">
+  <!-- crate -->
+  <g class="jolt">
+    <rect x="0" y="18" width="96" height="34" rx="3" fill="#241711" stroke="#3a2f27"/>
+    <line x1="0" y1="29" x2="96" y2="29" stroke="#3a2f27"/>
+    <rect x="44" y="18" width="8" height="11" fill="#c15f3c" opacity=".85"/>
+    <text x="48" y="44" filter="url(#glowS)" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="9.5" letter-spacing="1.5" fill="#ffa06b">RSI SCREENER</text>
+  </g>
+  <!-- pac-dot wheels, spin synced to travel, lit like the walked path -->
+  <g transform="translate(24 57.5)" filter="url(#glowS)">
+    <circle class="wheel" r="6.5" stroke="#ff9a5c" stroke-width="2.5" stroke-dasharray="5 5.4" fill="none"/>
+  </g>
+  <g transform="translate(72 57.5)" filter="url(#glowS)">
+    <circle class="wheel" r="6.5" stroke="#ff9a5c" stroke-width="2.5" stroke-dasharray="5 5.4" fill="none"/>
+  </g>
+</g>
+</svg>
