@@ -19,5 +19,5 @@
 <div align="center">
 <sub>That crate is a full SaaS: live market data, custom charts, auth, subscriptions. Built with AI assistance while I learn every layer of it.</sub>
 
-<sub>It crossed the line. Live at <a href="https://rsiscreener.me">rsiscreener.me</a>. Press the crate for the build.</sub>
+<sub> Live at <a href="https://rsiscreener.me">rsiscreener.me</a>. Press the crate for the build.</sub>
 </div>
